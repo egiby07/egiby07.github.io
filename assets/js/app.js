@@ -36,7 +36,7 @@ function setAdminUI(user){
 
 function onGoogleCredential(response){
  const user=decodeGoogleCredential(response.credential);
- if(!user||!user.sub){alert('Google 로그인 정보를 읽지 못했습니다.');return;}
+ if(!user||!user.sub){alert('Google 로그인 정보를 읽지 못했습니다.');return;} const cfg=window.PORTFOLIO_ADMIN_CONFIG||{}; const email=String(user.email||'').toLowerCase(); const exact=String(cfg.adminEmail||'').toLowerCase(); const prefix=String(cfg.adminEmailPrefix||'').toLowerCase(); if(exact ? email!==exact : (prefix && email.split('@')[0]!==prefix)){alert('egiby07 관리자 Google 계정으로 로그인해야 합니다.');return;}
  let bound=localStorage.getItem(adminBindingKey());
  if(!bound){localStorage.setItem(adminBindingKey(),user.sub);bound=user.sub;}
  if(bound!==user.sub){alert('이 브라우저에 등록된 관리자 Google 계정과 다른 계정입니다.');return;}
