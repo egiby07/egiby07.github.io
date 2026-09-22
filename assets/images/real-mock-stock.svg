@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#111827"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+</defs>
+<rect width="1200" height="760" rx="28" fill="url(#bg)"/>
+<rect x="36" y="34" width="1128" height="74" rx="18" fill="#1e293b" stroke="#334155"/>
+<circle cx="76" cy="71" r="20" fill="#4f46e5"/>
+<path d="M67 80L84 61L91 66L74 84Z" fill="white"/>
+<text x="108" y="66" fill="#fff" font-size="24" font-weight="800" font-family="Arial,sans-serif">REAL MOCK STOCK</text>
+<text x="108" y="90" fill="#94a3b8" font-size="13" font-family="Arial,sans-serif">실시간 모의투자 웹앱 · VIBE CODING PROJECT</text>
+<rect x="36" y="128" width="210" height="596" rx="20" fill="#1e293b" stroke="#334155"/>
+<rect x="56" y="154" width="170" height="50" rx="12" fill="#312e81"/>
+<text x="75" y="186" fill="#e0e7ff" font-size="15" font-weight="700" font-family="Arial,sans-serif">종목 마켓</text>
+<text x="75" y="238" fill="#94a3b8" font-size="15" font-family="Arial,sans-serif">주문/호가창</text>
+<text x="75" y="288" fill="#94a3b8" font-size="15" font-family="Arial,sans-serif">AI 진단</text>
+<text x="75" y="338" fill="#94a3b8" font-size="15" font-family="Arial,sans-serif">내 포트폴리오</text>
+<text x="75" y="388" fill="#94a3b8" font-size="15" font-family="Arial,sans-serif">투자 랭킹</text>
+<line x1="56" y1="430" x2="226" y2="430" stroke="#334155"/>
+<text x="56" y="466" fill="#64748b" font-size="12" font-weight="700" font-family="Arial,sans-serif">예수금</text>
+<text x="56" y="495" fill="#f8fafc" font-size="18" font-weight="800" font-family="Arial,sans-serif">100,000,000 원</text>
+<rect x="266" y="128" width="898" height="596" rx="20" fill="#0f172a" stroke="#334155"/>
+<rect x="292" y="154" width="840" height="62" rx="14" fill="#1e293b"/>
+<text x="318" y="179" fill="#94a3b8" font-size="12" font-family="Arial,sans-serif">코스피</text><text x="318" y="202" fill="#ef4444" font-size="18" font-weight="800" font-family="Arial,sans-serif">6,894.23  +0.85%</text>
+<text x="530" y="179" fill="#94a3b8" font-size="12" font-family="Arial,sans-serif">코스닥</text><text x="530" y="202" fill="#ef4444" font-size="18" font-weight="800" font-family="Arial,sans-serif">1,852.10  +1.12%</text>
+<text x="790" y="179" fill="#94a3b8" font-size="12" font-family="Arial,sans-serif">USD/KRW</text><text x="790" y="202" fill="#f8fafc" font-size="18" font-weight="800" font-family="Arial,sans-serif">1,332.50</text>
+<rect x="292" y="238" width="290" height="460" rx="16" fill="#1e293b"/>
+<text x="314" y="270" fill="#94a3b8" font-size="12" font-family="Arial,sans-serif">종목명 / 코드</text>
+<g font-family="Arial,sans-serif" font-size="15">
+<text x="314" y="306" fill="#f8fafc" font-weight="700">삼성전자</text><text x="510" y="306" fill="#ef4444">+0.85%</text>
+<text x="314" y="352" fill="#f8fafc" font-weight="700">SK하이닉스</text><text x="510" y="352" fill="#ef4444">+1.20%</text>
+<text x="314" y="398" fill="#f8fafc" font-weight="700">NAVER</text><text x="510" y="398" fill="#3b82f6">-0.69%</text>
+<text x="314" y="444" fill="#f8fafc" font-weight="700">카카오</text><text x="510" y="444" fill="#ef4444">+1.93%</text>
+<text x="314" y="490" fill="#f8fafc" font-weight="700">현대차</text><text x="510" y="490" fill="#ef4444">+1.25%</text>
+</g>
+<rect x="604" y="238" width="528" height="270" rx="16" fill="#1e293b"/>
+<text x="630" y="274" fill="#f8fafc" font-size="18" font-weight="800" font-family="Arial,sans-serif">삼성전자 <tspan fill="#64748b" font-size="12">005930</tspan></text>
+<text x="630" y="310" fill="#ef4444" font-size="25" font-weight="900" font-family="Arial,sans-serif">261,000 원</text>
+<text x="630" y="332" fill="#ef4444" font-size="12" font-weight="700" font-family="Arial,sans-serif">+2,200 (+0.85%)</text>
+<path d="M632 454 L674 438 L702 449 L742 412 L786 426 L824 394 L866 415 L912 364 L954 380 L1006 334 L1068 350 L1106 310" fill="none" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M632 474 L1106 474" stroke="#334155"/>
+<path d="M632 348 H1106 M632 390 H1106 M632 432 H1106" stroke="#263244"/>
+<rect x="604" y="528" width="528" height="170" rx="16" fill="#1e293b"/>
+<text x="630" y="558" fill="#94a3b8" font-size="12" font-weight="700" font-family="Arial,sans-serif">AI 종목 종합 진단 엔진</text>
+<rect x="630" y="580" width="138" height="86" rx="14" fill="#0f172a"/>
+<text x="699" y="610" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Arial,sans-serif">AI 종합 점수</text>
+<text x="699" y="646" text-anchor="middle" fill="#ef4444" font-size="34" font-weight="900" font-family="Arial,sans-serif">72점</text>
+<rect x="790" y="580" width="318" height="86" rx="14" fill="#0f172a"/>
+<text x="812" y="606" fill="#a5b4fc" font-size="13" font-weight="800" font-family="Arial,sans-serif">알고리즘 상세 종합 분석</text>
+<text x="812" y="630" fill="#cbd5e1" font-size="11" font-family="Arial,sans-serif">가격 추세 · 거래량 · 수급 지표 기반 분석</text>
+<text x="812" y="650" fill="#cbd5e1" font-size="11" font-family="Arial,sans-serif">차트 시각화 · 주문 · 포트폴리오 관리</text>
+</svg>
