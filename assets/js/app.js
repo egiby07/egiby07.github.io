@@ -4,6 +4,7 @@ const fallback={profile:{name:'egiby07',role:'DEVELOPER · BUILDER · EXPLORER',
 
 let serverMainHTML='';
 let isAdmin=false;
+function sessionKey(){return 'egiby07.portfolio.admin.session';}
 
 function render(d){
  const p=d.profile;
