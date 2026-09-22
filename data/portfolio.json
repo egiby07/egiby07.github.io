@@ -1,0 +1,11 @@
+{
+  "profile":{"name":"egiby07","role":"DEVELOPER · BUILDER · EXPLORER","summary":"이력, 경력, 자격증, 수상경력, 엔트리 프로젝트, 바이브코딩 프로젝트를 한 곳에서 보여주는 포트폴리오입니다.","bio":"문제에서 출발해 직접 만들고, 결과와 과정을 기록하는 개발자입니다. 실제 이력과 소개로 교체해 주세요.","now":{"title":"Portfolio System","detail":"프로젝트 파일이 들어오면 이 구조에 연결하고 계속 확장할 수 있습니다."},"github":"https://github.com/egiby07","skills":["Python","JavaScript","HTML/CSS","Entry","Vibe Coding","GitHub","AI Tools"],"facts":[{"label":"BASE","value":"Korea"},{"label":"FOCUS","value":"Making & Learning"},{"label":"PORTFOLIO","value":"Entry · Vibe Coding"},{"label":"STATUS","value":"Building"}]},
+  "career":[{"period":"20XX — 현재","org":"회사/기관명","title":"직무 · 역할","description":"담당 업무, 주요 성과, 기술 스택을 입력하세요.","meta":"경력"},{"period":"20XX — 20XX","org":"교육/활동명","title":"역할 또는 활동","description":"무엇을 했고 어떤 결과를 만들었는지 입력하세요.","meta":"활동"}],
+  "certifications":[{"date":"20XX","name":"자격증명","issuer":"발급기관"},{"date":"20XX","name":"자격증명","issuer":"발급기관"}],
+  "awards":[{"date":"20XX","name":"수상명","issuer":"주최/주관"},{"date":"20XX","name":"수상명","issuer":"주최/주관"}],
+  "projects":[
+    {"id":"entry-001","type":"entry","label":"ENTRY","title":"엔트리 프로젝트 01","description":"엔트리 프로젝트의 목표와 핵심 기능을 기록하세요.","stack":["Entry","Creative Computing"],"demo":"","repo":"","path":"projects/entry/entry-001/README.md"},
+    {"id":"vibe-001","type":"vibe","label":"VIBE CODING","title":"바이브코딩 프로젝트 01","description":"AI와 함께 아이디어를 빠르게 구현한 프로젝트입니다.","stack":["AI","HTML/CSS","JavaScript"],"demo":"","repo":"","path":"projects/vibe/vibe-001/README.md"},
+    {"id":"vibe-002","type":"vibe","label":"VIBE CODING","title":"바이브코딩 프로젝트 02","description":"새 프로젝트를 추가할 수 있는 자리입니다.","stack":["AI","Prototype"],"demo":"","repo":"","path":"projects/vibe/vibe-002/README.md"}
+  ]
+}
