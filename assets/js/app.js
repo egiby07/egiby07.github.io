@@ -16,48 +16,9 @@ function render(d){
  serverMainHTML=$('#top').innerHTML;
 }
 
-function decodeGoogleCredential(jwt){
- try{
-  const part=jwt.split('.')[1].replace(/-/g,'+').replace(/_/g,'/');
-  return JSON.parse(decodeURIComponent(atob(part.padEnd(part.length+((4-part.length%4)%4),'=')).split('').map(c=>'%'+('00'+c.charCodeAt(0).toString(16)).slice(-2)).join('')));
- }catch(e){return null;}
-}
-
-function adminBindingKey(){return 'egiby07.portfolio.admin.sub';}
-function sessionKey(){return 'egiby07.portfolio.google.session';}
-
-function setAdminUI(user){
- const area=$('#adminArea');
- if(!isAdmin){area.innerHTML='<div id="googleSignIn"></div>';setupGoogle();return;}
- area.innerHTML='<div class="adminTools"><span class="adminUser">✓ '+esc(user.email||user.name||'관리자')+'</span><button id="openEditor" class="adminBtn">✏️ HTML 편집</button><button id="logoutAdmin" class="adminBtn">로그아웃</button></div>';
- $('#openEditor').onclick=openEditor;
- $('#logoutAdmin').onclick=()=>{localStorage.removeItem(sessionKey());isAdmin=false;location.reload();};
-}
-
-function onGoogleCredential(response){
- const user=decodeGoogleCredential(response.credential);
- if(!user||!user.sub){alert('Google 로그인 정보를 읽지 못했습니다.');return;} const cfg=window.PORTFOLIO_ADMIN_CONFIG||{}; const email=String(user.email||'').toLowerCase(); const exact=String(cfg.adminEmail||'').toLowerCase(); const prefix=String(cfg.adminEmailPrefix||'').toLowerCase(); if(exact ? email!==exact : (prefix && email.split('@')[0]!==prefix)){alert('egiby07 관리자 Google 계정으로 로그인해야 합니다.');return;}
- let bound=localStorage.getItem(adminBindingKey());
- if(!bound){localStorage.setItem(adminBindingKey(),user.sub);bound=user.sub;}
- if(bound!==user.sub){alert('이 브라우저에 등록된 관리자 Google 계정과 다른 계정입니다.');return;}
- localStorage.setItem(sessionKey(),JSON.stringify({sub:user.sub,email:user.email,name:user.name,picture:user.picture}));
- isAdmin=true;setAdminUI(user);
-}
-
-function setupGoogle(){
- const cfg=window.PORTFOLIO_ADMIN_CONFIG||{};
- const target=$('#googleSignIn');
- if(!target)return;
- if(!cfg.googleClientId){
-  target.innerHTML='<button class="loginBtn" id="setupLogin">🔐 Google 로그인 설정 필요</button>';
-  $('#setupLogin').onclick=()=>alert('Google Cloud에서 Web OAuth Client ID를 만든 뒤 assets/js/admin-config.js의 googleClientId에 입력하세요.');
-  return;
- }
- if(!window.google?.accounts?.id){setTimeout(setupGoogle,500);return;}
- google.accounts.id.initialize({client_id:cfg.googleClientId,callback:onGoogleCredential,auto_select:false,use_fedcm_for_button:true});
- google.accounts.id.renderButton(target,{theme:'outline',size:'medium',shape:'pill',text:'signin_with'});
-}
-
+async function adminPasswordLogin(){const input=$("#adminPassword"),error=$("#adminLoginError");const data=new TextEncoder().encode(input.value);const hash=Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",data))).map(x=>x.toString(16).padStart(2,"0")).join("");if(hash==="6d62aa4b52071e39f064a930d190b85ab327eb1a5045a8050ac538666ee765ca"){isAdmin=true;localStorage.setItem(sessionKey(),JSON.stringify({local:true}));$("#adminLoginModal").setAttribute("aria-hidden","true");input.value="";error.textContent="";setAdminUI({name:"관리자"});}else{error.textContent="비밀번호가 올바르지 않습니다.";input.select();}}
+function setAdminUI(user){const area=$("#adminArea");if(!isAdmin){area.innerHTML='<button id="adminLoginBtn" class="adminMiniBtn" type="button">관리자</button>';$("#adminLoginBtn").onclick=openLogin;return;}area.innerHTML='<div class="adminTools"><button id="openEditor" class="adminBtn">✏️ 편집</button><button id="logoutAdmin" class="adminBtn">로그아웃</button></div>';$("#openEditor").onclick=openEditor;$("#logoutAdmin").onclick=()=>{localStorage.removeItem(sessionKey());isAdmin=false;location.reload();};}
+function openLogin(){$("#adminLoginModal").setAttribute("aria-hidden","false");$("#adminPassword").focus();}
 function openEditor(){
  if(!isAdmin)return;
  $('#htmlEditor').value=localStorage.getItem('egiby07.portfolio.mainHtml')||serverMainHTML;
@@ -97,12 +58,4 @@ function insertImages(files){
  });
 }
 
-document.addEventListener('DOMContentLoaded',()=>{
- fetch('data/portfolio.json').then(r=>r.ok?r.json():Promise.reject()).then(render).catch(()=>render(fallback)).finally(()=>{
-  const saved=localStorage.getItem('egiby07.portfolio.mainHtml');
-  if(saved){setTimeout(()=>applyLocalHTML(saved),0);}
-  $('#closeEditor').onclick=closeEditor;$('#saveEditor').onclick=saveHTML;$('#resetEditor').onclick=resetHTML;$('#imageUpload').onchange=e=>insertImages(e.target.files);
-  const session=JSON.parse(localStorage.getItem(sessionKey())||'null');
-  if(session){isAdmin=true;setAdminUI(session);}else{setupGoogle();}
- });
-});
+document.addEventListener("DOMContentLoaded",()=>{fetch("data/portfolio.json").then(r=>r.ok?r.json():Promise.reject()).then(render).catch(()=>render(fallback)).finally(()=>{const saved=localStorage.getItem("egiby07.portfolio.mainHtml");if(saved){setTimeout(()=>applyLocalHTML(saved),0);}$("#closeEditor").onclick=closeEditor;$("#saveEditor").onclick=saveHTML;$("#resetEditor").onclick=resetHTML;$("#imageUpload").onchange=e=>insertImages(e.target.files);$("#closeLogin").onclick=()=>$("#adminLoginModal").setAttribute("aria-hidden","true");$("#adminPasswordSubmit").onclick=adminPasswordLogin;$("#adminPassword").onkeydown=e=>{if(e.key==="Enter")adminPasswordLogin();};const session=JSON.parse(localStorage.getItem(sessionKey())||"null");if(session){isAdmin=true;setAdminUI(session);}else{setAdminUI(null);}});});
