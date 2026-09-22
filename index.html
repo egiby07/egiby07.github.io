@@ -6,10 +6,10 @@
 <meta name="description" content="egiby07 개인 포트폴리오">
 <title>egiby07 | Portfolio</title>
 <link rel="stylesheet" href="assets/css/style.css">
-<script src="https://accounts.google.com/gsi/client" async defer></script>
+
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#top">EGIBY07<span>.</span></a><nav><a href="#about">소개</a><a href="#career">경력</a><a href="#credentials">자격·수상</a><a href="#projects">프로젝트</a></nav><div class="adminArea" id="adminArea"><div id="googleSignIn"></div></div><a class="github" href="https://github.com/egiby07" target="_blank">GitHub ↗</a></div></header>
+<header><div class="wrap nav"><a class="brand" href="#top">EGIBY07<span>.</span></a><nav><a href="#about">소개</a><a href="#career">경력</a><a href="#credentials">자격·수상</a><a href="#projects">프로젝트</a></nav><div class="adminArea" id="adminArea"><button id="adminLoginBtn" class="adminMiniBtn" type="button">관리자</button></div><a class="github" href="https://github.com/egiby07" target="_blank">GitHub ↗</a></div></header>
 <main id="top">
 <section class="hero wrap"><div><p class="eyebrow" id="role"></p><h1 id="name"></h1><p class="summary" id="summary"></p><div class="actions"><a class="btn primary" href="#projects">프로젝트 보기</a><a class="btn" id="github1" target="_blank">GitHub</a></div></div><aside><span class="dot"></span><small>NOW BUILDING</small><h2 id="nowTitle"></h2><p id="nowDetail"></p></aside></section>
 <section id="about" class="section wrap"><div class="section-title"><span>01</span><div><p class="eyebrow">ABOUT</p><h2>나를 소개합니다.</h2></div></div><div class="two"><div><p class="lead" id="bio"></p><div id="skills" class="tags"></div></div><dl id="facts" class="facts"></dl></div></section>
@@ -32,6 +32,7 @@
     </div>
   </div>
 </div>
+<div id="adminLoginModal" class="adminLoginModal" aria-hidden="true"><div class="adminLoginBox"><button id="closeLogin" class="iconBtn" type="button">×</button><b>관리자 편집</b><p>관리자 비밀번호를 입력하세요.</p><input id="adminPassword" type="password" inputmode="numeric" autocomplete="off" placeholder="비밀번호"><button id="adminPasswordSubmit" class="btn primary" type="button">확인</button><small id="adminLoginError"></small></div></div>
 <script src="assets/js/admin-config.js"></script>
 <script src="assets/js/app.js" defer></script>
 </body></html>
